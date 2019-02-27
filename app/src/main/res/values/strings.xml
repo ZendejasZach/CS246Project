@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CS246Project</string>
+    <string name="updateInventory">Update Inventory</string>
+    <string name="viewInventory">View Inventory</string>
+    <string name="itemsNeeded">Items Needed</string>
+    <string name="notificationSettings">Notification Settings</string>
+    <string name="logOut">Log Out</string>
 </resources>
