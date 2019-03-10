@@ -7,4 +7,7 @@
     <string name="logOut">Log Out</string>
     <string name="glanceItems">Items at a glance</string>
     <string name="home">Home</string>
+    <string name="scanAddition">Scan For Addition</string>
+    <string name="scanRemoval">Scan For Removal</string>
+    <string name="manualUpdate">Manual Update</string>
 </resources>
