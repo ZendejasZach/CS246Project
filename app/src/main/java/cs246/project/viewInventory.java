@@ -2,6 +2,7 @@ package cs246.project;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 
 public class viewInventory extends AppCompatActivity {
 
@@ -9,5 +10,6 @@ public class viewInventory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_inventory);
+
     }
 }
