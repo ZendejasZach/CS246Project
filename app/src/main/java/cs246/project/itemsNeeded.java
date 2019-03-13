@@ -14,8 +14,6 @@ public class itemsNeeded extends AppCompatActivity {
         setContentView(R.layout.activity_items_needed);
 
         // Buttons
-        // TODO: need to test these buttons in emulator
-        // TODO: implement android back button
         viewInventoryButton();
         updateInventoryButton();
     }

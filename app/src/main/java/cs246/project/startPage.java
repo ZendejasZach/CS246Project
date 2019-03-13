@@ -14,7 +14,6 @@ public class startPage extends AppCompatActivity {
         setContentView(R.layout.activity_start_page);
 
         // Buttons
-        // TODO: Test these methods in emulator.
         viewInventoryButton();
         updateInventoryButton();
         settingsButton();
