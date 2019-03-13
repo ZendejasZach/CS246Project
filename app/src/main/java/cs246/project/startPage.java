@@ -18,11 +18,11 @@ public class startPage extends AppCompatActivity {
         viewInventoryButton();
         updateInventoryButton();
         settingsButton();
-        logout();
+        logoutButton();
     }
 
     // Page not created yet
-    private void logout() {
+    private void logoutButton() {
         Button logout = findViewById(R.id.logOut);
         logout.setOnClickListener(new View.OnClickListener(){
             @Override
