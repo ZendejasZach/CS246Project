@@ -3,10 +3,14 @@ package cs246.project;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 public class startPage extends AppCompatActivity {
+
+    // logging
+    private static final String TAG = "startPage";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,7 @@ public class startPage extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                Log.v(TAG, "Logout button tapped");
 //                startActivity(new Intent(startPage.this, loginPage.class));
 //                Likely some other logic here to log the user out.
             }
@@ -38,6 +43,7 @@ public class startPage extends AppCompatActivity {
         settings.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                Log.v(TAG, "Settings button tapped");
 //                startActivity(new Intent(startPage.this, notificationSettings.class));
             }
         });
@@ -48,6 +54,7 @@ public class startPage extends AppCompatActivity {
         updateInventory.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                Log.v(TAG, "Update Inventory Button tapped");
                 startActivity(new Intent(startPage.this, updateInventory.class));
             }
         });
@@ -59,6 +66,7 @@ public class startPage extends AppCompatActivity {
         viewInventory.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                Log.v(TAG, "View Inventory button tapped");
                 startActivity(new Intent(startPage.this, viewInventory.class));
             }
         });

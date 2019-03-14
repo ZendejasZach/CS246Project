@@ -3,10 +3,14 @@ package cs246.project;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 public class itemsNeeded extends AppCompatActivity {
+
+    // logging tag
+    private static final String TAG = "itemsNeeded";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class itemsNeeded extends AppCompatActivity {
        viewInventory.setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View view){
+               Log.v(TAG, "View Inventory button tapped");
                startActivity(new Intent(itemsNeeded.this, viewInventory.class));
            }
        });
