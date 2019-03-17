@@ -16,7 +16,12 @@ public class updateInventory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_inventory);
+
+        // Buttons
+       manualUpdateButton();
     }
+
+
 
     // go to scanAddition activity
     private void scanAdditionButton(){
@@ -29,6 +34,24 @@ public class updateInventory extends AppCompatActivity {
             }
         });
     }
+
+
+    private void manualUpdateButton() {
+        Button manualUpdate = findViewById(R.id.manualUpdate);
+        manualUpdate.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(updateInventory.this, manualUpdate.class));
+            }
+        });
+    }
+
+
+
+
+
+
+
 
     // Test comment
 }
