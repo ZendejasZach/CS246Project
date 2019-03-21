@@ -12,6 +12,13 @@ public class startPage extends AppCompatActivity {
     // logging
     private static final String TAG = "startPage";
 
+    /**
+     * Activity Creation
+     *
+     * Creates the activity and the buttons on the page
+     * @author Zach Zendejas
+     * @param savedInstanceState Needed for method
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +31,14 @@ public class startPage extends AppCompatActivity {
         logoutButton();
     }
 
-    // Page not created yet
+    /**
+     * Logout Button
+     *
+     * This is the creation of the logout button on the start page
+     * TODO: Create logout process
+     *
+     * @author Zach Zendejas
+     */
     private void logoutButton() {
         Button logout = findViewById(R.id.logOut);
         logout.setOnClickListener(new View.OnClickListener(){
@@ -37,7 +51,14 @@ public class startPage extends AppCompatActivity {
         });
     }
 
-    // Page not created yet
+    /**
+     * Settings button
+     *
+     * This creates the settings button on the start page
+     * TODO: Settings activity not created yet.
+     *
+     * @author Zach Zendejas
+     */
     private void settingsButton() {
         Button settings = findViewById(R.id.notificationSettings);
         settings.setOnClickListener(new View.OnClickListener(){
@@ -49,6 +70,13 @@ public class startPage extends AppCompatActivity {
         });
     }
 
+    /**
+     * Update Inventory Button
+     *
+     * This creates the update inventory button on the start page and navigates to said page
+     *
+     * @author Zach Zendejas
+     */
     private void updateInventoryButton() {
         Button updateInventory = findViewById(R.id.updateInventory);
         updateInventory.setOnClickListener(new View.OnClickListener(){
@@ -60,7 +88,13 @@ public class startPage extends AppCompatActivity {
         });
     }
 
-    // go to viewInventory activity
+    /**
+     * View Inventory Button
+     *
+     * This creates the view inventory button on the start page and navigates to said page
+     *
+     * @author Zach Zendejas
+     */
     private void viewInventoryButton(){
         Button viewInventory = findViewById(R.id.viewInventory);
         viewInventory.setOnClickListener(new View.OnClickListener(){
