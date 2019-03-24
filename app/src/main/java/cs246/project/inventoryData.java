@@ -1,14 +1,23 @@
 package cs246.project;
 
+import android.app.Activity;
+import android.content.Context;
+import android.os.Environment;
 import com.google.gson.Gson;
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Vector;
 
-public class inventoryData {
+public class inventoryData extends Activity {
 
     // the user's inventory
     private String userName;
-    private Vector<InventoryItem> inventory;
+    private File fInventory;
+    private FileOutputStream outputStream;
+    private Vector vInventory;
 
     /**
      * inventoryData
@@ -18,8 +27,12 @@ public class inventoryData {
      * @param userName the username of the user
      * @author Zach Zendejas
      */
-    public inventoryData(String userName){
+    public inventoryData(String userName, String filename){
         this.userName = userName;
+
+        // create blank inventory
+        filename = userName + ".Inventory";
+        fInventory = new File(Environment.getDataDirectory(), filename);
     }
 
     /**
@@ -30,9 +43,9 @@ public class inventoryData {
      * @param amt amount of the item
      * @author Zach Zendejas
      */
-    public void addItem(String item, int amt){
+    public void addItem(String item, int amt, Vector vInventory){
        InventoryItem newItem = new InventoryItem(item, amt);
-       inventory.add(newItem);
+       vInventory.add(newItem);
     }
 
     /**
@@ -42,13 +55,41 @@ public class inventoryData {
      * @param item item to be removed.
      * @author Zach Zendejas
      */
-    public void removeItem(InventoryItem item){
-        inventory.remove(item);
+    public void removeItem(InventoryItem item, Vector vInventory){
+        vInventory.remove(item);
     }
 
-    private void save(){
-        // TODO: Create save method
-        // here we will serialize the inventory object to a Json string and save it in shared preferences
+    private void save(Vector vInventory, String filename){
+        // strigify
+        Gson gson = new Gson();
+        String json = gson.toJson(vInventory);
+
+        // write file
+        try{
+            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write(json.getBytes());
+            outputStream.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
+    public String load(String userName, String filename){
+        String data;
+
+        // attempt to load file
+        try{
+            data = new String(Files.readAllBytes(Paths.get(filename)));
+
+            //Write data to vInventory
+            Gson g = new Gson();
+            vInventory = g.fromJson(data, InventoryItem.class);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            data = "NULL";
+        }
+
+        return data;
+    }
 }

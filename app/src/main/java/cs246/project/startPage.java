@@ -11,6 +11,9 @@ public class startPage extends AppCompatActivity {
 
     // logging
     private static final String TAG = "startPage";
+    String userName;
+    inventoryData inventory;
+    String filename;
 
     /**
      * Activity Creation
@@ -29,6 +32,20 @@ public class startPage extends AppCompatActivity {
         updateInventoryButton();
         settingsButton();
         logoutButton();
+
+        // Load user information
+        userName = "Zach";  // Used for testing
+        filename = userName + ".data";
+
+        // check for existing inventory
+
+        if(inventoryData.load(userName, filename) == "NULL"){
+            inventory = new inventoryData(userName, filename);
+        }
+        else{
+
+        }
+
     }
 
     /**
@@ -105,4 +122,6 @@ public class startPage extends AppCompatActivity {
             }
         });
     }
+
+
 }
