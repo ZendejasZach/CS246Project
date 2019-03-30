@@ -10,4 +10,5 @@
     <string name="scanAddition">Scan For Addition</string>
     <string name="scanRemoval">Scan For Removal</string>
     <string name="manualUpdate">Manual Update</string>
+    <string name="createInventory">Create Test Inventory</string>
 </resources>

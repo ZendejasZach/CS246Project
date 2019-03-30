@@ -39,11 +39,11 @@ public class startPage extends AppCompatActivity {
 
         // check for existing inventory
 
-        if(inventoryData.load(userName, filename) == "NULL"){
+        if(!(inventoryData.checkData(userName, filename))){
             inventory = new inventoryData(userName, filename);
         }
         else{
-
+            inventory = inventoryData.load(userName, filename);
         }
 
     }

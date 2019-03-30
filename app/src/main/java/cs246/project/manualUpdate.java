@@ -13,6 +13,22 @@ public class manualUpdate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual_update);
+
+        //Debugging
+        createDebugInventory();
     }
     // Test comment
+
+    /**
+     * Created to create a test inventory
+     * @author Zach Zendejas
+     */
+    //Debugging
+    private void createDebugInventory(){
+        Button createInventory = findViewById(R.id.createInventory);
+        createInventory.setOnClickListener(new View.OnClickListener(){
+
+        });
+
+    }
 }

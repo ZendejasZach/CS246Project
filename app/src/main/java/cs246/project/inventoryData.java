@@ -17,7 +17,7 @@ public class inventoryData extends Activity {
     private String userName;
     private File fInventory;
     private FileOutputStream outputStream;
-    private Vector vInventory;
+    private Vector<InventoryItem> vInventory;
 
     /**
      * inventoryData
@@ -74,22 +74,47 @@ public class inventoryData extends Activity {
         }
     }
 
-    public String load(String userName, String filename){
-        String data;
+    /**
+     * loads the data from file
+     * @param userName
+     * @param filename
+     * @return
+     */
+    public static inventoryData load(String userName, String filename){
+        inventoryData data;
+        String sData = "";
 
-        // attempt to load file
+        // Try and read the data
         try{
-            data = new String(Files.readAllBytes(Paths.get(filename)));
-
-            //Write data to vInventory
-            Gson g = new Gson();
-            vInventory = g.fromJson(data, InventoryItem.class);
-
+            sData = new String(Files.readAllBytes(Paths.get(filename)));
         } catch (IOException e) {
             e.printStackTrace();
-            data = "NULL";
         }
 
+        // unstringify
+        Gson gson = new Gson();
+
+        data = gson.fromJson(sData, inventoryData.class);
+
         return data;
+    }
+
+    /**
+     * Checks if there is a pre-existing database file
+     *
+     * @author Zach Zendejas
+     * @param userName
+     * @param filename
+     * @return
+     */
+    public static Boolean checkData(String userName, String filename){
+       // attempt to load file
+       try{
+          String data = new String(Files.readAllBytes(Paths.get(filename)));
+          return true;
+       } catch (IOException e) {
+           e.printStackTrace();
+           return false;
+       }
     }
 }
