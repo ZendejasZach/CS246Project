@@ -19,6 +19,8 @@ public class updateInventory extends AppCompatActivity {
 
         // Buttons
        manualUpdateButton();
+        //Debugging
+        createDebugInventory();
     }
 
 
@@ -46,12 +48,33 @@ public class updateInventory extends AppCompatActivity {
         });
     }
 
+    /**
+     * Created to create a test inventory
+     * @author Zach Zendejas
+     */
+    //Debugging
+    private void createDebugInventory(){
+        final Button createInventory = findViewById(R.id.createInventory);
+        createInventory.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "Started creating inventory");
+                createTestInventory();
+            }
+        });
+    }
 
+    private void createTestInventory(){
+        inventoryData data = new inventoryData("Test", "Test.data");
 
-
-
-
-
-    // Test comment
+        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 5, 1);
+        Log.v(TAG, "Finished creating test inventory");
+    }
 }
