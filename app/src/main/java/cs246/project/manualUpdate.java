@@ -9,6 +9,8 @@ import android.widget.Button;
 
 public class manualUpdate extends AppCompatActivity {
 
+    // Logging tag
+    private static final String TAG = "manualUpdate";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +27,20 @@ public class manualUpdate extends AppCompatActivity {
      */
     //Debugging
     private void createDebugInventory(){
-        Button createInventory = findViewById(R.id.createInventory);
+        final Button createInventory = findViewById(R.id.createInventory);
         createInventory.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "Started creating inventory");
+                createTestInventory();
+            }
         });
+    }
 
+    private void createTestInventory(){
+        inventoryData data = new inventoryData;
+
+        data.addItem(5, "bandAids");
     }
 }

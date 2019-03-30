@@ -7,6 +7,7 @@ class InventoryItem extends Vector<inventoryData> {
 
     private String item;
     private int amt;
+    private int limit;
 
     //TODO: Setup an item limit
 
@@ -20,9 +21,10 @@ class InventoryItem extends Vector<inventoryData> {
      * @author Zach Zendejas
      *
      */
-    public InventoryItem(String item, int amt){
+    public InventoryItem(String item, int amt, int limit) {
         this.item = item;
         this.amt = amt;
+        this.limit = limit;
     }
 
     /**
@@ -49,6 +51,9 @@ class InventoryItem extends Vector<inventoryData> {
         this.item = item;
     }
 
+    public void setLimit(int limit){
+        this.limit = limit;
+    }
     /**
      * Get Amount
      *

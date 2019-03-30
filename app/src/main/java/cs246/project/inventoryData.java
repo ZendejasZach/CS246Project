@@ -43,8 +43,8 @@ public class inventoryData extends Activity {
      * @param amt amount of the item
      * @author Zach Zendejas
      */
-    public void addItem(String item, int amt, Vector vInventory){
-       InventoryItem newItem = new InventoryItem(item, amt);
+    public void addItem(String item, int amt, int limit){
+       InventoryItem newItem = new InventoryItem(item, amt, limit);
        vInventory.add(newItem);
     }
 
