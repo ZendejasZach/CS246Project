@@ -18,14 +18,16 @@ public class loginPage extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
     }
 
+    private void showError() {
+        Password.setError("Password and username didn't match");
+    }
+
     private void validate(String userName, String userPassword) {
         if ((userName.equals("")) && (userPassword.equals(""))){
             Intent intent = new Intent(loginPage.this, startPage.class);
             startActivity(intent);
             }
-        else{
-            Info.setText("Incorrect username and/or password");
-        }
+        else showError();
 
     }
 }
