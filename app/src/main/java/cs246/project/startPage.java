@@ -38,7 +38,7 @@ public class startPage extends AppCompatActivity {
         filename = userName + ".data";
 
         // check for existing inventory
-
+//i think this might resolve if you use .equals() instead of ==
         if(inventoryData.load(userName, filename) == "NULL"){
             inventory = new inventoryData(userName, filename);
         }
