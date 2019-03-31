@@ -10,4 +10,7 @@
     <string name="scanAddition">Scan For Addition</string>
     <string name="scanRemoval">Scan For Removal</string>
     <string name="manualUpdate">Manual Update</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
 </resources>

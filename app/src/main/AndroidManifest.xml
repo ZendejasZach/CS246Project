@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".itemsNeeded"></activity>
+        <activity android:name=".loginPage"></activity>
+            <intent-filter></intent-filter>
         <activity android:name=".viewInventory"></activity>
         <activity android:name=".updateInventory"></activity>
         <activity android:name=".startPage">
