@@ -1,11 +1,13 @@
 package cs246.project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class updateInventory extends AppCompatActivity {
 
@@ -59,7 +61,6 @@ public class updateInventory extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Log.v(TAG, "Started creating inventory");
                 createTestInventory();
             }
         });
@@ -75,6 +76,13 @@ public class updateInventory extends AppCompatActivity {
         data.addItem("BandAids", 5, 1);
         data.addItem("BandAids", 5, 1);
         data.addItem("BandAids", 5, 1);
-        Log.v(TAG, "Finished creating test inventory");
+
+        // Finished toast
+        Context context = getApplicationContext();
+        CharSequence text = "Test Database Created";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 }

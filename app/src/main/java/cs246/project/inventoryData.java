@@ -33,6 +33,9 @@ public class inventoryData extends Activity {
         // create blank inventory
         filename = userName + ".Inventory";
         fInventory = new File(Environment.getDataDirectory(), filename);
+
+        // create new vInventory item
+        vInventory = new Vector<>();
     }
 
     /**

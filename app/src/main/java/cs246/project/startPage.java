@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
 
 public class startPage extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class startPage extends AppCompatActivity {
     String userName;
     inventoryData inventory;
     String filename;
+    private TableLayout mTable;
 
     /**
      * Activity Creation
@@ -34,7 +36,7 @@ public class startPage extends AppCompatActivity {
         logoutButton();
 
         // Load user information
-        userName = "Zach";  // Used for testing
+        userName = "Test";  // Used for testing
         filename = userName + ".data";
 
         // check for existing inventory
@@ -45,6 +47,9 @@ public class startPage extends AppCompatActivity {
         else{
             inventory = inventoryData.load(userName, filename);
         }
+
+        // populate table
+        mTable = (TableLayout)findViewById(R.id.neededItemsTable);
 
     }
 
@@ -123,5 +128,13 @@ public class startPage extends AppCompatActivity {
         });
     }
 
+    public void loadData(){
+        int leftRowMargin=0;
+        int topRowMargin=0;
+        int rightRowMargin=0;
+        int bottomRowMargin=0;
+        int textSize = 0, smallTexxtSize = 0, mediumTextSize=0;
 
+
+    }
 }
