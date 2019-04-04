@@ -65,19 +65,19 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/item0"
+                android:id="@+id/item1"
                 android:layout_width="285dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Item" />
 
             <TextView
-                android:id="@+id/amt0"
+                android:id="@+id/amt1"
                 android:layout_width="37dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Amount" />
 
             <TextView
-                android:id="@+id/lmt0"
+                android:id="@+id/lmt1"
                 android:layout_width="41dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Limit" />
@@ -88,19 +88,19 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/item0"
+                android:id="@+id/item1"
                 android:layout_width="285dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Item" />
 
             <TextView
-                android:id="@+id/amt0"
+                android:id="@+id/amt1"
                 android:layout_width="37dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Amount" />
 
             <TextView
-                android:id="@+id/lmt0"
+                android:id="@+id/lmt1"
                 android:layout_width="41dp"
                 android:layout_height="wrap_content" />
         </TableRow>

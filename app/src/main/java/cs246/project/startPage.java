@@ -17,8 +17,6 @@ public class startPage extends AppCompatActivity {
     String userName;
     inventoryData userInventory;
     String filename;
-    private TableLayout mTableLayout;
-    ProgressDialog mProgressBar;
 
     /**
      * Activity Creation
@@ -43,7 +41,6 @@ public class startPage extends AppCompatActivity {
         filename = userName + ".data";
 
         // check for existing inventory
-
         if(!(inventoryData.checkData(userName, filename))){
             userInventory = new inventoryData(userName, filename);
         }
@@ -64,19 +61,19 @@ public class startPage extends AppCompatActivity {
            // check if limit has been reached
            if (amt <= lmt){
                // populate table
-               replaceText("Item" + row);
-               replaceText("amt" + row);
-               replaceText("lmt" + row);
+               replaceText("Item" + row, userInventory.getItem(i));
+               replaceText("amt" + row, Integer.toString(amt));
+               replaceText("lmt" + row, Integer.toString(lmt));
                row++;
            }
         }
 
     }
 
-    private void replaceText(String element){
-        String id = "R.id."+element;
-        TextView item = (TextView)findViewById(id);
-
+    private void replaceText(String element, String text){
+        int resID = getResources().getIdentifier(element, "id", getPackageName());
+        TextView item = (TextView)findViewById(resID);
+        item.setText(text);
     }
 
     /**

@@ -126,13 +126,31 @@ public class inventoryData extends Activity {
     }
 
     public int getAmt(int element){
-        InventoryItem amt = vInventory.get(element);
-        return amt.getAmt();
+        int amt;
+        int size = vInventory.size();
+
+        if (size == 0) {
+            amt = 0;
+        }
+        else{
+            amt = vInventory.get(element).getAmt();
+        }
+
+        return amt;
     }
 
     public int getLmt(int element){
-        InventoryItem lmt = vInventory.get(element);
-        return lmt.getLmt();
+        int lmt;
+        int size = vInventory.size();
+
+        if (size == 0) {
+            lmt = 0;
+        }
+        else{
+            lmt = vInventory.get(element).getLmt();
+        }
+
+        return lmt;
     }
 
     public String getItem(int element){
