@@ -1,5 +1,6 @@
 package cs246.project;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,15 +8,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
+import android.widget.TextView;
 
 public class startPage extends AppCompatActivity {
 
     // logging
     private static final String TAG = "startPage";
     String userName;
-    inventoryData inventory;
+    inventoryData userInventory;
     String filename;
-    private TableLayout mTable;
+    private TableLayout mTableLayout;
+    ProgressDialog mProgressBar;
 
     /**
      * Activity Creation
@@ -42,14 +45,37 @@ public class startPage extends AppCompatActivity {
         // check for existing inventory
 
         if(!(inventoryData.checkData(userName, filename))){
-            inventory = new inventoryData(userName, filename);
+            userInventory = new inventoryData(userName, filename);
         }
         else{
-            inventory = inventoryData.load(userName, filename);
+            userInventory = inventoryData.load(userName, filename);
         }
 
-        // populate table
-        mTable = (TableLayout)findViewById(R.id.neededItemsTable);
+        // Populate table
+        int size = userInventory.getLength();
+        int row = 1;
+
+        for (int i = 0; i <= size; i++){
+
+           // set amt and limit
+           int amt = userInventory.getAmt(i);
+           int lmt = userInventory.getLmt(i);
+
+           // check if limit has been reached
+           if (amt <= lmt){
+               // populate table
+               replaceText("Item" + row);
+               replaceText("amt" + row);
+               replaceText("lmt" + row);
+               row++;
+           }
+        }
+
+    }
+
+    private void replaceText(String element){
+        String id = "R.id."+element;
+        TextView item = (TextView)findViewById(id);
 
     }
 

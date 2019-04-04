@@ -69,10 +69,10 @@ public class updateInventory extends AppCompatActivity {
     private void createTestInventory(){
         inventoryData data = new inventoryData("Test", "Test.data");
 
+        data.addItem("BandAids", 0, 1);
         data.addItem("BandAids", 5, 1);
-        data.addItem("BandAids", 5, 1);
-        data.addItem("BandAids", 5, 1);
-        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 3, 3);
+        data.addItem("BandAids", 7, 10);
         data.addItem("BandAids", 5, 1);
         data.addItem("BandAids", 5, 1);
         data.addItem("BandAids", 5, 1);

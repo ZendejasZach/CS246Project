@@ -74,6 +74,8 @@ class InventoryItem extends Vector<inventoryData> {
         return item;
     }
 
+    public int getLmt() { return limit; }
+
     @Override
     public Stream<inventoryData> stream() {
         return null;

@@ -17,7 +17,7 @@ public class inventoryData extends Activity {
     private String userName;
     private File fInventory;
     private FileOutputStream outputStream;
-    private Vector<InventoryItem> vInventory;
+    Vector<InventoryItem> vInventory;
 
     /**
      * inventoryData
@@ -119,5 +119,24 @@ public class inventoryData extends Activity {
            e.printStackTrace();
            return false;
        }
+    }
+
+    public int getLength(){
+        return vInventory.size();
+    }
+
+    public int getAmt(int element){
+        InventoryItem amt = vInventory.get(element);
+        return amt.getAmt();
+    }
+
+    public int getLmt(int element){
+        InventoryItem lmt = vInventory.get(element);
+        return lmt.getLmt();
+    }
+
+    public String getItem(int element){
+        InventoryItem item = vInventory.get(element);
+        return item.getItem();
     }
 }
