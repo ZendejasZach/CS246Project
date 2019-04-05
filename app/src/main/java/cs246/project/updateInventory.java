@@ -20,7 +20,7 @@ public class updateInventory extends AppCompatActivity {
         setContentView(R.layout.activity_update_inventory);
 
         // Buttons
-       manualUpdateButton();
+        manualUpdateButton();
         //Debugging
         createDebugInventory();
     }
@@ -66,7 +66,11 @@ public class updateInventory extends AppCompatActivity {
         });
     }
 
-    private void createTestInventory(){
+    /**
+     * Create test inventory
+     * @author Zach Zendejas
+     */
+    public void createTestInventory(){
         inventoryData data = new inventoryData("Test", "Test.data");
 
         data.addItem("BandAids", 0, 1);
