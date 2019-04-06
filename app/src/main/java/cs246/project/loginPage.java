@@ -8,9 +8,11 @@ import android.widget.EditText;
 
 public class loginPage extends AppCompatActivity {
 
-    private EditText Name;
+    private EditText User;
     private EditText Password;
     private Button Login;
+    private Button Signup;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +24,8 @@ public class loginPage extends AppCompatActivity {
         Password.setError("Password and username didn't match");
     }
 
-    private void validate(String userName, String userPassword) {
+    private void
+    validate(String userName, String userPassword) {
         if ((userName.equals("")) && (userPassword.equals(""))){
             Intent intent = new Intent(loginPage.this, startPage.class);
             startActivity(intent);
