@@ -146,7 +146,7 @@ public class startPage extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Log.v(TAG, "Logout button tapped");
-//                startActivity(new Intent(startPage.this, loginPage.class));
+                startActivity(new Intent(startPage.this, loginPage.class));
 //                Likely some other logic here to log the user out.
             }
         });
