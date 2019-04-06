@@ -18,4 +18,7 @@
     <string name="Item">Item</string>
     <string name="Amount">Amt</string>
     <string name="Limit">Lmt</string>
+    <string name="let_s_get_started">Let\'s Get Started</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
 </resources>

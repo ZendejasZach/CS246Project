@@ -42,7 +42,7 @@ public class startPage extends AppCompatActivity {
         if(!(inventoryData.checkData(userName, filename))){
             userInventory = new inventoryData(userName, filename);
         }
-        if(userName == "Test"){
+        if(userName.equals("Test")){
             // Create test database
             userInventory = new inventoryData(userName, filename);
 
@@ -79,7 +79,7 @@ public class startPage extends AppCompatActivity {
     private void replaceText(String type, int row, String text){
         TextView textView;
 
-        if(type == "Item") {
+        if(type.equals("Item")) {
             switch (row) {
                 case 1:
                     textView = findViewById(R.id.item1);
@@ -97,7 +97,7 @@ public class startPage extends AppCompatActivity {
 
         }
 
-        if(type == "amt") {
+        if(type.equals("amt")) {
             switch (row) {
                 case 1:
                     textView = findViewById(R.id.amt1);
@@ -114,7 +114,7 @@ public class startPage extends AppCompatActivity {
             }
         }
 
-        if(type == "lmt"){
+        if(type.equals("lmt")){
             switch(row){
                 case 1:
                    textView = findViewById(R.id.lmt1);
