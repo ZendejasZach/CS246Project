@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class startPage extends AppCompatActivity {
 
     // logging
     private static final String TAG = "startPage";
     String userName;
-    inventoryData inventory;
+    inventoryData userInventory;
     String filename;
 
     /**
@@ -34,18 +35,101 @@ public class startPage extends AppCompatActivity {
         logoutButton();
 
         // Load user information
-        userName = "Zach";  // Used for testing
+        userName = "Test";  // Used for testing
         filename = userName + ".data";
 
         // check for existing inventory
-//i think this might resolve if you use .equals() instead of ==
-        if(inventoryData.load(userName, filename) == "NULL"){
-            inventory = new inventoryData(userName, filename);
+        if(!(inventoryData.checkData(userName, filename))){
+            userInventory = new inventoryData(userName, filename);
         }
-        else{
+        if(userName == "Test"){
+            // Create test database
+            userInventory = new inventoryData(userName, filename);
+
+            userInventory.addItem("Band Aids", 5, 3); // Item should not appear under needed items
+            userInventory.addItem("Band Aids", 4, 5); // Should appear in items needed
+            userInventory.addItem("Band Aids", 5, 5); // Should also appear in items needed
+        }
+        else {
+            userInventory = inventoryData.load(userName, filename);
+        }
+
+        // Populate table
+        int size = userInventory.getLength();
+        int row = 1;
+
+        for (int i = 0; i < size; i++){
+
+           // set amt and limit
+           int amt = userInventory.getAmt(i);
+           int lmt = userInventory.getLmt(i);
+
+           // check if limit has been reached
+           if (amt <= lmt && lmt != 0){
+               // populate table
+               replaceText("Item", row, userInventory.getItem(i));
+               replaceText("amt" , row, Integer.toString(amt));
+               replaceText("lmt" , row, Integer.toString(lmt));
+               row++;
+           }
+        }
+
+    }
+
+    private void replaceText(String type, int row, String text){
+        TextView textView;
+
+        if(type == "Item") {
+            switch (row) {
+                case 1:
+                    textView = findViewById(R.id.item1);
+                    textView.setText(text);
+                    break;
+                case 2:
+                   textView = findViewById(R.id.item2);
+                   textView.setText(text);
+                   break;
+                case 3:
+                   textView = findViewById(R.id.item3);
+                   textView.setText(text);
+                   break;
+            }
 
         }
 
+        if(type == "amt") {
+            switch (row) {
+                case 1:
+                    textView = findViewById(R.id.amt1);
+                    textView.setText(text);
+                    break;
+                case 2:
+                    textView = findViewById(R.id.amt2);
+                    textView.setText(text);
+                    break;
+                case 3:
+                    textView = findViewById(R.id.amt3);
+                    textView.setText(text);
+                    break;
+            }
+        }
+
+        if(type == "lmt"){
+            switch(row){
+                case 1:
+                   textView = findViewById(R.id.lmt1);
+                   textView.setText(text);
+                   break;
+                case 2:
+                   textView = findViewById(R.id.lmt2);
+                   textView.setText(text);
+                   break;
+                case 3:
+                   textView = findViewById(R.id.lmt3);
+                   textView.setText(text);
+                   break;
+            }
+        }
     }
 
     /**
@@ -123,5 +207,13 @@ public class startPage extends AppCompatActivity {
         });
     }
 
+    public void loadData(){
+        int leftRowMargin=0;
+        int topRowMargin=0;
+        int rightRowMargin=0;
+        int bottomRowMargin=0;
+        int textSize = 0, smallTexxtSize = 0, mediumTextSize=0;
 
+
+    }
 }

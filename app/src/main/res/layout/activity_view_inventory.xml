@@ -18,7 +18,7 @@
 
     <TableLayout
         android:id="@+id/viewInventoryTable"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="509dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
@@ -29,19 +29,27 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="25dp" >
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/headerDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/headerQty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qty" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/headerLmt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Limit" />
+        </TableRow>
+
     </TableLayout>
 
 

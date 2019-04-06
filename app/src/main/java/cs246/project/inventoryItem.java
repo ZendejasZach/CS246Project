@@ -1,9 +1,15 @@
 package cs246.project;
 
-class InventoryItem {
+import java.util.Vector;
+import java.util.stream.Stream;
+
+class InventoryItem extends Vector<inventoryData> {
 
     private String item;
     private int amt;
+    private int limit;
+
+    //TODO: Setup an item limit
 
     /**
      * Inventory Object
@@ -15,9 +21,10 @@ class InventoryItem {
      * @author Zach Zendejas
      *
      */
-    public InventoryItem(String item, int amt){
+    public InventoryItem(String item, int amt, int limit) {
         this.item = item;
         this.amt = amt;
+        this.limit = limit;
     }
 
     /**
@@ -44,6 +51,9 @@ class InventoryItem {
         this.item = item;
     }
 
+    public void setLimit(int limit){
+        this.limit = limit;
+    }
     /**
      * Get Amount
      *
@@ -62,5 +72,12 @@ class InventoryItem {
      */
     public String getItem() {
         return item;
+    }
+
+    public int getLmt() { return limit; }
+
+    @Override
+    public Stream<inventoryData> stream() {
+        return null;
     }
 }

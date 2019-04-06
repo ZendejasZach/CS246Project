@@ -1,11 +1,13 @@
 package cs246.project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class updateInventory extends AppCompatActivity {
 
@@ -18,7 +20,9 @@ public class updateInventory extends AppCompatActivity {
         setContentView(R.layout.activity_update_inventory);
 
         // Buttons
-       manualUpdateButton();
+        manualUpdateButton();
+        //Debugging
+        createDebugInventory();
     }
 
 
@@ -46,12 +50,43 @@ public class updateInventory extends AppCompatActivity {
         });
     }
 
+    /**
+     * Created to create a test inventory
+     * @author Zach Zendejas
+     */
+    //Debugging
+    private void createDebugInventory(){
+        final Button createInventory = findViewById(R.id.createInventory);
+        createInventory.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                createTestInventory();
+            }
+        });
+    }
 
+    /**
+     * Create test inventory
+     * @author Zach Zendejas
+     */
+    public void createTestInventory(){
+        inventoryData data = new inventoryData("Test", "Test.data");
 
+        data.addItem("BandAids", 0, 1);
+        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 3, 3);
+        data.addItem("BandAids", 7, 10);
+        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 5, 1);
+        data.addItem("BandAids", 5, 1);
 
+        // Finished toast
+        Context context = getApplicationContext();
+        CharSequence text = "Test Database Created";
+        int duration = Toast.LENGTH_SHORT;
 
-
-
-    // Test comment
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
 }

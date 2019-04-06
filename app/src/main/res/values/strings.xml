@@ -13,4 +13,9 @@
     <string name="user_name">User Name</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="createInventory">Create Test Inventory</string>
+    <string name="Item">Item</string>
+    <string name="Amount">Amt</string>
+    <string name="Limit">Lmt</string>
 </resources>
