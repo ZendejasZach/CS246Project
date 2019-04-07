@@ -8,9 +8,11 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import java.util.Vector;
 import java.util.Iterator;
+import android.util.Log;
 
 public class viewInventory extends AppCompatActivity  {
 
+    private static final String TAG = "viewInventory";
     Vector<String> v = new Vector<>();//***Temporary  Test Example ***
     inventoryData localInventoryData; // This needs to connect to the InventoryData object
 
@@ -18,7 +20,13 @@ public class viewInventory extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_inventory);
-
+        /**
+         * Table Layout
+         *
+         * Dynamically updates the table based on what's in the vector
+         *
+         * @author Kirk Fletcher
+         */
         TableLayout tl = (TableLayout) findViewById(R.id.viewInventoryTable);
 
         //***Temporary Text Example
@@ -37,10 +45,11 @@ public class viewInventory extends AppCompatActivity  {
                 tr.addView(tv);
 
                 tl.addView(tr);
+                Log.v(TAG, "While Loop run");
             }
             // *** Ends Here ****
 
-        // NEEDS TO PULL FROM INVENTORY_DATA*******
+        // NEEDS TO REPLACE TEMPORARY TEXT ABOVE WHEN WE PULL FROM INVENTORY_DATA*******
 //        Iterator it = localInventoryData.vInventory.iterator();
 //
 //        while(it.hasNext()) {
@@ -67,8 +76,5 @@ public class viewInventory extends AppCompatActivity  {
 //
 //            tl.addView(tr); // Add Row to Layout
 //        }
-
-
-
     }
 }
